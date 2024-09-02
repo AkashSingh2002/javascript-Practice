@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+        <input type="text" onkeyup="betterFunction()">
+    </div>
+    <script>
+
+      let timeout;
+      function getData() {
+        console.log("Data Fetched");
+      }
+
+      function debounce(callback, delay) {
+        let timer;
+        return function () {
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            callback();
+          }, delay);
+        };
+      }
+
+      const betterFunction = debounce(getData, 1000);
+
+    </script>
+  </body>
+</html>
