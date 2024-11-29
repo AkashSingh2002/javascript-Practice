@@ -81,3 +81,18 @@ function maxNumber(arr){
 }
 
 console.log(maxNumber([1, 5, 2, 3]));
+
+// --------------------------------------------
+// --------------------------------------------
+
+// reverse number using redice method
+
+function reduceReverse(num){
+    let digits = Array.from(String(num), Number);
+    let reversedArray = digits.reduce((acc, digit) => {
+        return [digit, ...acc]
+    },[]);
+    return parseInt(reversedArray.join(''));
+}
+
+console.log(reduceReverse(123456789))
